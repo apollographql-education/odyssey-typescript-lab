@@ -1,5 +1,5 @@
 import { RESTDataSource } from "@apollo/datasource-rest";
-import { PlaylistModel, SnapshotOrError } from '../models'
+import { PlaylistModel, SnapshotOrError, ArtistModel } from '../models'
 
 export class SpotifyAPI extends RESTDataSource {
   baseURL = "https://spotify-demo-api-fe224840a08c.herokuapp.com/v1/";
@@ -7,6 +7,10 @@ export class SpotifyAPI extends RESTDataSource {
   async getFeaturedPlaylists(): Promise<PlaylistModel[]> {
     const { playlists: { items } } : { playlists: { items: [] }} = await this.get("browse/featured-playlists");
     return items;
+  }
+
+  async getArtist(artistId: string): Promise<ArtistModel>{
+    return this.get(`artists/${artistId}`);
   }
 
   getPlaylist(playlistId: string): Promise<PlaylistModel> {

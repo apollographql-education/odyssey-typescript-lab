@@ -47,6 +47,18 @@ export const resolvers: Resolvers = {
   Track: {
     durationMs: (parent) => {
       return parent.duration_ms;
+    },
+    artist: async ({artists}, _, { dataSources }) => {
+      const { id: artistId } = artists?.[0];
+      const { followers, name, id, uri, genres } = await dataSources.spotifyAPI.getArtist(artistId);
+
+      return {
+        id,
+        name,
+        uri,
+        genres,
+        followers: followers?.total
+      }
     }
   }
 }
