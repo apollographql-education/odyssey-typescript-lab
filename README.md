@@ -1,6 +1,6 @@
-# (Odyssey Course) Intro to GraphQL with TypeScript
+# (Odyssey Course) Growing your GraphQL API with TypeScript & Apollo Server
 
-Welcome to the starter code for **Intro to GraphQL with TypeScript**. You can find the [course lessons and instructions](https://apollographql.com/tutorials/intro-typescript) on Odyssey, [Apollo](https://apollographql.com)'s learning platform.
+Welcome to the starter code for **Growing your GraphQL API with TypeScript & Apollo Server**. You can find the [course lessons and instructions](https://apollographql.com/tutorials/growing-graphql-api-ts-lab) on Odyssey, [Apollo](https://apollographql.com)'s learning platform.
 
 ## How to use this repo
 
