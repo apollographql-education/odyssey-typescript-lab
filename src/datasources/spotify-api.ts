@@ -10,16 +10,16 @@ export class SpotifyAPI extends RESTDataSource {
   }
 
   async getArtist(artistId: string): Promise<ArtistModel>{
-    return this.get(`artists/${artistId}`);
+    return this.get<ArtistModel>(`artists/${artistId}`);
   }
 
   getPlaylist(playlistId: string): Promise<PlaylistModel> {
-    return this.get(`playlists/${playlistId}`);
+    return this.get<PlaylistModel>(`playlists/${playlistId}`);
   }
 
   addItemsToPlaylist(input: { playlistId: string, uris: string[] }): Promise<SnapshotOrError> {
     const { playlistId, uris } = input;
-    return this.post(`playlists/${playlistId}/tracks`, {
+    return this.post<SnapshotOrError>(`playlists/${playlistId}/tracks`, {
       params: {
         uris: uris.join(',')
       }
